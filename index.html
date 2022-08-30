@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- cdn link -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+
+    <!-- custom script -->
+    <script src="./redux/counter/actionTypes.js"></script>
+    <script src="./redux/counter/actions.js"></script>
+    <script src="./redux/counter/counterReducer.js"></script>
+    <script src="./redux/store.js"></script>
+
+    <title>Redux Counter</title>
+  </head>
+  
+  <body class="h-full w-full flex justify-center">
+    <div class="w-1/3 mt-16">
+      <h1 class="text-4xl font-medium text-sky-700">
+        Redux Multi Counter Application
+      </h1>
+
+      <div id="counterList" class="mt-10"></div>
+      <div class="flex justify-end">
+        <button
+          class="text-2xl bg-purple-600 text-white py-2 px-3 rounded mr-4"
+          id="addCounterBtn"
+        >
+          +Add Counter
+        </button>
+        <button
+          class="text-2xl bg-red-600 text-white py-2 px-3 rounded"
+          id="resetCounterBtn"
+        >
+          Reset
+        </button>
+      </div>
+    </div>
+
+    <script>
+      addCounter();
+
+      const addCounterBtn = document.getElementById("addCounterBtn");
+      const resetCounterBtn = document.getElementById("resetCounterBtn");
+
+      addCounterBtn.addEventListener("click", () => {
+        addCounter();
+      });     
+      
+      resetCounterBtn.addEventListener("click", () => {
+        resetCounter();
+      });
+    </script>
+  </body>
+</html>
